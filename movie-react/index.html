@@ -14,20 +14,35 @@
       
    <!-- Search Section  -->
    <div class="max-w-md-auto mb-8">
-    <div
-
-
-
+    <div class="flex">
+      <input type="text" id="searchInput"
+      class="flex-1 px-4 py-2 border-0 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-pink-500 bg-opacity-20 text-white placeholder-gray-300"
+      placeholder="Search for a movie..." />
+      <button id="searchButton"
+       class="bg-pink-500 text-white px-6 py-2 rounded-r-lg hover:bg-pink-600 transition-colors duration-300">
+       Search
+      </button>
+    </div>
    </div>
 
+   <!-- Popular Movie Section-->
+   <div class="mb-12">
+    <h2 class="text-2xl font-bold text-white mb-6">🌟 Popular Movies</h2>
+    <div id="popularMovies" class="grid grid-cols-1 md:grid-cols-2 lg:gridcols-4 gap-6">
+      <!-- Search results will be displayed here-->
+    </div>
+   </div> 
 
-
-
-
-
-
-
-    <div id="root"></div>
+   <!-- Movie Details Modal-->
+   <div Id="movieModal" class="fixed inset-0 bg-black bg-opacity-75 hidden">
+    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-purple-800 to-blue-800 p-6 rounded-lg w-11/12 max-w-2x1  text-white">
+      <button id="closeModal" class="absolute top-2 right-2 text-white hover:text-pink-300 text-2xl">×</button>
+       <div id="movieDetails" class="mt-4">
+        <!-- Movie details will be displayed here-->
+       </div>
+    </div>
+   </div>
+  <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
