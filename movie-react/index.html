@@ -1,48 +1,55 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Movie Data</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Database</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body class="bg-gradient-to-br from-purplr-900 to-blue-900 min-h-screen">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gradient-to-br from-purple-900 to-blue-900 min-h-screen">
     <div class="container mx-auto px-4 py-8">
-      <h1 class="text-4xl font-bold text-center mb-4 text-white">🎬 Movie Data</h1>
-      
-   <!-- Search Section  -->
-   <div class="max-w-md-auto mb-8">
-    <div class="flex">
-      <input type="text" id="searchInput"
-      class="flex-1 px-4 py-2 border-0 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-pink-500 bg-opacity-20 text-white placeholder-gray-300"
-      placeholder="Search for a movie..." />
-      <button id="searchButton"
-       class="bg-pink-500 text-white px-6 py-2 rounded-r-lg hover:bg-pink-600 transition-colors duration-300">
-       Search
-      </button>
-    </div>
-   </div>
+        <h1 class="text-4xl font-bold text-center mb-8 text-white">🎬 Movie Database</h1>
+        
+        <!-- Search Section -->
+        <div class="max-w-md mx-auto mb-8">
+            <div class="flex">
+                <input type="text" id="searchInput" 
+                       class="flex-1 px-4 py-2 border-0 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-pink-500 bg-white bg-opacity-20 text-white placeholder-gray-300"
+                       placeholder="Search for a movie...">
+                <button id="searchButton" 
+                        class="bg-pink-500 text-white px-6 py-2 rounded-r-lg hover:bg-pink-600 transition-colors duration-300">
+                    Search
+                </button>
+            </div>
+        </div>
 
-   <!-- Popular Movie Section-->
-   <div class="mb-12">
-    <h2 class="text-2xl font-bold text-white mb-6">🌟 Popular Movies</h2>
-    <div id="popularMovies" class="grid grid-cols-1 md:grid-cols-2 lg:gridcols-4 gap-6">
-      <!-- Search results will be displayed here-->
-    </div>
-   </div> 
+        <!-- Popular Movies Section -->
+        <div class="mb-12">
+            <h2 class="text-2xl font-bold text-white mb-6">🌟 Popular Movies</h2>
+            <div id="popularMovies" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Popular movies will be displayed here -->
+            </div>
+        </div>
 
-   <!-- Movie Details Modal-->
-   <div Id="movieModal" class="fixed inset-0 bg-black bg-opacity-75 hidden">
-    <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-purple-800 to-blue-800 p-6 rounded-lg w-11/12 max-w-2x1  text-white">
-      <button id="closeModal" class="absolute top-2 right-2 text-white hover:text-pink-300 text-2xl">×</button>
-       <div id="movieDetails" class="mt-4">
-        <!-- Movie details will be displayed here-->
-       </div>
+        <!-- Search Results Section -->
+        <div id="searchResults" class="mb-12 hidden">
+            <h2 class="text-2xl font-bold text-white mb-6">🔍 Search Results</h2>
+            <div id="moviesGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Search results will be displayed here -->
+            </div>
+        </div>
+
+        <!-- Movie Details Modal -->
+        <div id="movieModal" class="fixed inset-0 bg-black bg-opacity-75 hidden">
+            <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-gradient-to-br from-purple-800 to-blue-800 p-6 rounded-lg w-11/12 max-w-2xl text-white">
+                <button id="closeModal" class="absolute top-2 right-2 text-white hover:text-pink-300 text-2xl">×</button>
+                <div id="movieDetails" class="mt-4">
+                    <!-- Movie details will be displayed here -->
+                </div>
+            </div>
+        </div>
     </div>
-   </div>
-  <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-  </body>
-</html>
+    <script src="script.js"></script>
+</body>
+</html> 
